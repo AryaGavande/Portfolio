@@ -713,3 +713,200 @@ section#contact {
         padding-bottom: 65px !important;
     }
 }
+
+/* ==================================
+   Workflow section
+================================== */
+
+.workflow-section {
+    background-color: var(--page-background);
+    border-top: 1px solid var(--border-color);
+}
+
+.workflow-heading {
+    max-width: 760px;
+    margin-bottom: 45px;
+}
+
+.workflow-heading h2 {
+    max-width: 680px;
+    margin-bottom: 18px;
+    color: var(--primary-text);
+    font-size: clamp(2rem, 3.2vw, 2.75rem);
+    font-weight: 700;
+    line-height: 1.15;
+}
+
+.workflow-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 22px;
+}
+
+.workflow-card {
+    position: relative;
+    min-height: 270px;
+    padding: 28px;
+    background:
+        linear-gradient(
+            145deg,
+            rgba(110, 168, 254, 0.09),
+            transparent 55%
+        ),
+        var(--card-background);
+    border: 1px solid var(--border-color);
+    border-radius: 15px;
+    transition:
+        transform 0.25s ease,
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.workflow-card:hover {
+    transform: translateY(-6px);
+    border-color: var(--accent-color);
+    box-shadow: 0 16px 34px rgba(0, 0, 0, 0.3);
+}
+
+.workflow-card-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 40px;
+}
+
+.workflow-number {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    color: #07101c;
+    font-size: 0.9rem;
+    font-weight: 800;
+    background-color: var(--accent-color);
+    border-radius: 50%;
+}
+
+.workflow-arrow {
+    color: var(--accent-color);
+    font-size: 1.6rem;
+    opacity: 0.65;
+}
+
+.workflow-card h3 {
+    margin-bottom: 14px;
+    color: var(--primary-text);
+    font-size: 1.05rem;
+    font-weight: 700;
+    line-height: 1.4;
+}
+
+.workflow-card p {
+    margin-bottom: 0;
+    color: var(--secondary-text);
+    font-size: 0.94rem;
+    line-height: 1.7;
+}
+
+/* Tablet */
+
+@media (max-width: 991px) {
+    .workflow-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .workflow-card {
+        min-height: 240px;
+    }
+
+    .workflow-card:nth-child(2) .workflow-arrow {
+        display: none;
+    }
+}
+
+/* Mobile */
+
+@media (max-width: 576px) {
+    .workflow-section {
+        padding-top: 65px !important;
+        padding-bottom: 65px !important;
+    }
+
+    .workflow-heading {
+        margin-bottom: 30px;
+    }
+
+    .workflow-heading h2 {
+        font-size: 2rem;
+    }
+
+    .workflow-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .workflow-card {
+        min-height: auto;
+        padding: 25px;
+    }
+
+    .workflow-card-top {
+        margin-bottom: 25px;
+    }
+
+    .workflow-arrow {
+        display: none;
+    }
+}
+
+.section-description {
+    max-width: 850px;
+    margin-top: 24px;
+    margin-bottom: 0;
+    color: var(--secondary-text);
+    font-family: inherit;
+    font-size: 1.05rem;
+    font-weight: 400;
+    line-height: 1.75;
+}
+
+/* ==================================
+   Larger card description text
+================================== */
+
+/* Service-card descriptions */
+.service-card p {
+    font-size: 1.05rem;
+    line-height: 1.75;
+}
+
+/* Workflow-card descriptions */
+.workflow-card p {
+    font-size: 1.05rem;
+    line-height: 1.75;
+}
+
+/* Carousel Challenge, Approach, and Outcome text */
+.project-details {
+    font-size: 1.05rem;
+    line-height: 1.75;
+}
+
+.project-details p {
+    margin-bottom: 1.15rem;
+}
+
+/* Make the labels slightly more prominent */
+.project-details strong {
+    font-size: 1.06rem;
+    font-weight: 700;
+}
+
+@media (max-width: 576px) {
+    .service-card p,
+    .workflow-card p,
+    .project-details {
+        font-size: 1rem;
+        line-height: 1.7;
+    }
+}

@@ -8,6 +8,11 @@
         content="width=device-width, initial-scale=1"
     >
 
+    <meta
+        name="description"
+        content="Arya Gavande's freelance data storytelling portfolio."
+    >
+
     <title>Arya Gavande | Data Storytelling</title>
 
     <!-- Bootstrap CSS -->
@@ -16,8 +21,54 @@
         rel="stylesheet"
     >
 
-    <!-- Your custom CSS -->
+    <!-- Existing custom CSS -->
     <link rel="stylesheet" href="style.css">
+
+    <!-- Consistency patch: section descriptions match the hero description. -->
+    <style>
+        .section-description,
+        #about .about-description,
+        #contact .contact-description {
+            max-width: 850px;
+            margin-top: 1.5rem;
+            margin-bottom: 0;
+            color: var(--secondary-text, #adb5bd);
+            font-size: 1.25rem !important;
+            font-weight: 300;
+            line-height: 1.7;
+        }
+
+        .section-heading {
+            margin-bottom: 0;
+            color: var(--primary-text, #f8f9fa);
+            font-size: clamp(2rem, 3vw, 2.75rem);
+            font-weight: 700;
+            line-height: 1.15;
+        }
+
+        .project-details {
+            color: var(--secondary-text, #adb5bd);
+            font-size: 0.98rem;
+            line-height: 1.65;
+        }
+
+        .project-details p {
+            margin-bottom: 1rem;
+        }
+
+        .project-details p:last-child {
+            margin-bottom: 1.5rem;
+        }
+
+        .project-details strong {
+            color: var(--primary-text, #f8f9fa);
+        }
+
+        .resume-preview {
+            width: 100%;
+            border: 0;
+        }
+    </style>
 </head>
 
 <body>
@@ -25,7 +76,7 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg bg-white border-bottom">
         <div class="container">
-            <a class="navbar-brand fw-bold" href="#">
+            <a class="navbar-brand fw-bold" href="#top">
                 Arya Gavande
             </a>
 
@@ -34,6 +85,9 @@
                 type="button"
                 data-bs-toggle="collapse"
                 data-bs-target="#navbarMenu"
+                aria-controls="navbarMenu"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
             >
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -44,15 +98,19 @@
             >
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="#about">About</a>
-                    </li>
-
-                    <li class="nav-item">
                         <a class="nav-link" href="#services">Services</a>
                     </li>
 
                     <li class="nav-item">
+                        <a class="nav-link" href="#workflow">Workflow</a>
+                    </li>
+
+                    <li class="nav-item">
                         <a class="nav-link" href="#projects">Projects</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
                     </li>
 
                     <li class="nav-item">
@@ -63,8 +121,8 @@
         </div>
     </nav>
 
-    <!-- Hero section -->
-    <header class="hero-section">
+    <!-- Hero -->
+    <header id="top" class="hero-section">
         <div class="container py-5">
             <div class="row align-items-center min-vh-75">
                 <div class="col-lg-8">
@@ -92,10 +150,11 @@
 
                     <a
                         href="#contact"
-                        class="btn btn-outline-dark btn-lg mt-3 ms-2"
+                        class="btn btn-outline-dark btn-lg mt-3 ms-sm-2"
                     >
                         Work with me
                     </a>
+
                 </div>
             </div>
         </div>
@@ -103,20 +162,20 @@
 
     <!-- Services -->
     <section id="services" class="py-5 bg-light">
-    <div class="container">
+        <div class="container">
 
             <div class="mb-5">
                 <p class="section-label">
-                Services
+                    Services
                 </p>
 
-                <h2 class="fw-bold">
-                How I can support your team
+                <h2 class="section-heading">
+                    How I can support your team
                 </h2>
 
-                <p class="text-secondary mt-3">
-                Freelance analytical and communication support for consulting
-                firms, marketing teams, and client-facing projects.
+                <p class="section-description">
+                    Freelance analytical and communication support for consulting
+                    firms, marketing teams, and client-facing projects.
                 </p>
             </div>
 
@@ -129,29 +188,29 @@
 
                             <div class="service-icon">
                                 <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                width="26"
-                                height="26"
-                                fill="currentColor"
-                                viewBox="0 0 16 16"
-                                aria-hidden="true"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="26"
+                                    height="26"
+                                    fill="currentColor"
+                                    viewBox="0 0 16 16"
+                                    aria-hidden="true"
                                 >
                                     <path
-                                    d="M4 11a1 1 0 1 1-2 0 1 1 0 0 1 2 0m6-4a1 1 0 1 1-2 0 1 1 0 0 1 2 0m4-5a1 1 0 1 1-2 0 1 1 0 0 1 2 0M3.5 10.5l4-3 4-4"
+                                        d="M4 11a1 1 0 1 1-2 0 1 1 0 0 1 2 0m6-4a1 1 0 1 1-2 0 1 1 0 0 1 2 0m4-5a1 1 0 1 1-2 0 1 1 0 0 1 2 0M3.5 10.5l4-3 4-4"
                                     />
                                     <path
-                                    d="M3.5 11.5h-1v-1h1zm6-4h-1v-1h1zm4-5h-1v-1h1z"
+                                        d="M3.5 11.5h-1v-1h1zm6-4h-1v-1h1zm4-5h-1v-1h1z"
                                     />
                                 </svg>
                             </div>
 
                             <h3 class="h5 fw-bold mt-4">
-                            Data Storytelling
+                                Data Storytelling
                             </h3>
 
                             <p class="text-secondary mb-0">
-                            Turning analytical findings into clear, persuasive
-                            narratives designed for specific audiences.
+                                Turning analytical findings into clear, persuasive
+                                narratives designed for specific audiences.
                             </p>
 
                         </div>
@@ -165,29 +224,25 @@
 
                             <div class="service-icon">
                                 <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                width="26"
-                                height="26"
-                                fill="currentColor"
-                                viewBox="0 0 16 16"
-                                aria-hidden="true"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="26"
+                                    height="26"
+                                    fill="currentColor"
+                                    viewBox="0 0 16 16"
+                                    aria-hidden="true"
                                 >
-                                    <path
-                                    d="M0 0h1v15h15v1H0z"
-                                    />
-                                    <path
-                                    d="M3 12h2V7H3zm4 0h2V4H7zm4 0h2V2h-2z"
-                                    />
+                                    <path d="M0 0h1v15h15v1H0z" />
+                                    <path d="M3 12h2V7H3zm4 0h2V4H7zm4 0h2V2h-2z" />
                                 </svg>
                             </div>
 
                             <h3 class="h5 fw-bold mt-4">
-                            Dashboard Design
+                                Dashboard Design
                             </h3>
 
                             <p class="text-secondary mb-0">
-                            Creating interactive dashboards that highlight key
-                            metrics, trends, and actionable insights.
+                                Creating interactive dashboards that highlight key
+                                metrics, trends, and actionable insights.
                             </p>
 
                         </div>
@@ -201,26 +256,26 @@
 
                             <div class="service-icon">
                                 <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                width="26"
-                                height="26"
-                                fill="currentColor"
-                                viewBox="0 0 16 16"
-                                aria-hidden="true"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="26"
+                                    height="26"
+                                    fill="currentColor"
+                                    viewBox="0 0 16 16"
+                                    aria-hidden="true"
                                 >
                                     <path
-                                    d="M2 2a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2zm0 1h12a1 1 0 0 1 1 1v7H1V4a1 1 0 0 1 1-1m5.5 1.5v5l4-2.5z"
+                                        d="M2 2a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2zm0 1h12a1 1 0 0 1 1 1v7H1V4a1 1 0 0 1 1-1m5.5 1.5v5l4-2.5z"
                                     />
                                 </svg>
                             </div>
 
                             <h3 class="h5 fw-bold mt-4">
-                            Client Presentations
+                                Client Presentations
                             </h3>
 
                             <p class="text-secondary mb-0">
-                            Converting research and technical analysis into
-                            polished, client-ready presentations and pitches.
+                                Converting research and technical analysis into
+                                polished, client-ready presentations and pitches.
                             </p>
 
                         </div>
@@ -234,26 +289,26 @@
 
                             <div class="service-icon">
                                 <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                width="26"
-                                height="26"
-                                fill="currentColor"
-                                viewBox="0 0 16 16"
-                                aria-hidden="true"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="26"
+                                    height="26"
+                                    fill="currentColor"
+                                    viewBox="0 0 16 16"
+                                    aria-hidden="true"
                                 >
                                     <path
-                                    d="M14 4.5V14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h5.5zm-3-3V5h3.5zM5 7h6v1H5zm0 2h6v1H5zm0 2h4v1H5z"
+                                        d="M14 4.5V14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h5.5zm-3-3V5h3.5zM5 7h6v1H5zm0 2h6v1H5zm0 2h4v1H5z"
                                     />
                                 </svg>
                             </div>
 
                             <h3 class="h5 fw-bold mt-4">
-                            Executive Reports
+                                Executive Reports
                             </h3>
 
                             <p class="text-secondary mb-0">
-                            Summarizing complex findings into concise reports
-                            for executives and nontechnical decision-makers.
+                                Summarizing complex findings into concise reports
+                                for executives and nontechnical decision-makers.
                             </p>
 
                         </div>
@@ -264,95 +319,81 @@
         </div>
     </section>
 
-    <!-- About -->
-    <section id="about" class="py-5">
+    <!-- Workflow -->
+    <section id="workflow" class="workflow-section py-5">
         <div class="container">
 
-            <div class="row align-items-center g-5">
+            <div class="workflow-heading">
+                <p class="section-label">
+                    How I Work
+                </p>
 
-                <!-- About text -->
-                <div class="col-lg-5">
+                <h2 class="section-heading">
+                    From complex data to a clear client story
+                </h2>
 
-                    <p class="section-label">
-                    About Me
-                    </p>
+                <p class="section-description">
+                    I combine analysis, visualization, and business communication
+                    to turn technical information into clear, client-ready material.
+                </p>
+            </div>
 
-                    <h2 class="fw-bold mb-4">
-                    Combining analysis with clear communication
-                    </h2>
+            <div class="workflow-grid">
 
-                    <p class="about-description">
-                    I combine data analysis, visualization, and business
-                    communication to make complex information easier to
-                    understand and act upon.
-                    </p>
-
-                    <p class="about-description">
-                    My technical experience includes Python, SQL, Tableau,
-                    Excel, statistical analysis, dashboard development, and
-                    data storytelling.
-                    </p>
-
-                    <p class="about-description">
-                    I am particularly interested in helping consulting firms
-                    and marketing teams translate technical findings into
-                    persuasive client presentations, reports, and visual
-                    narratives.
-                    </p>
-
-                    <div class="skills-list">
-                    <span>Python</span>
-                    <span>SQL</span>
-                    <span>Tableau</span>
-                    <span>Excel</span>
-                    <span>Data Visualization</span>
-                    <span>Statistical Analysis</span>
+                <article class="workflow-card">
+                    <div class="workflow-card-top">
+                        <span class="workflow-number">01</span>
+                        <span class="workflow-arrow" aria-hidden="true">→</span>
                     </div>
 
-                    <a
-                    href="./asset/Arya-Gavande-Resume-0726.pdf"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="btn resume-button mt-4"
-                    >
-                    View Full Resume
-                    </a>
+                    <h3>Understand the objective</h3>
 
-                </div>
+                    <p>
+                        Define the audience, business question, and decision the
+                        final deliverable needs to support.
+                    </p>
+                </article>
 
-                <!-- Resume preview -->
-                <div class="col-lg-7">
-                    <div class="resume-card">
-
-                        <div class="resume-card-header">
-                            <div>
-                                <p class="resume-label mb-1">
-                                Resume
-                                </p>
-
-                                <h3 class="h5 mb-0">
-                                Arya Gavande
-                                </h3>
-                            </div>
-
-                            <a
-                            href="./asset/Arya-Gavande-Resume-0726.pdf"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            class="resume-open-link"
-                            >
-                            Open PDF
-                            </a>
-                        </div>
-
-                        <iframe
-                        src="./asset/Arya-Gavande-Resume-0726.pdf#toolbar=0&navpanes=0&scrollbar=0"
-                        class="resume-preview"
-                        title="Preview of Arya Gavande's resume"
-                        ></iframe>
-
+                <article class="workflow-card">
+                    <div class="workflow-card-top">
+                        <span class="workflow-number">02</span>
+                        <span class="workflow-arrow" aria-hidden="true">→</span>
                     </div>
-                </div>
+
+                    <h3>Analyze and prioritize</h3>
+
+                    <p>
+                        Examine the data, research, and technical material to
+                        identify the findings that matter most.
+                    </p>
+                </article>
+
+                <article class="workflow-card">
+                    <div class="workflow-card-top">
+                        <span class="workflow-number">03</span>
+                        <span class="workflow-arrow" aria-hidden="true">→</span>
+                    </div>
+
+                    <h3>Build the visual narrative</h3>
+
+                    <p>
+                        Organize the findings into a clear story supported by
+                        dashboards, charts, reports, or presentations.
+                    </p>
+                </article>
+
+                <article class="workflow-card">
+                    <div class="workflow-card-top">
+                        <span class="workflow-number">04</span>
+                    </div>
+
+                    <h3>Refine and deliver</h3>
+
+                    <p>
+                        Incorporate feedback and deliver polished material aligned
+                        with the project’s audience and objective.
+                    </p>
+                </article>
 
             </div>
         </div>
@@ -363,24 +404,26 @@
         <div class="container">
 
             <div class="mb-4">
-                <p class="text-uppercase fw-semibold text-secondary mb-2">
-                Portfolio
+                <p class="section-label">
+                    Portfolio
                 </p>
 
-                <h2 class="fw-bold">Selected Tableau Projects</h2>
+                <h2 class="section-heading">
+                    Selected Tableau Projects
+                </h2>
 
-                <p class="text-secondary">
-                Explore selected dashboards and data storytelling projects.
+                <p class="section-description">
+                    Three examples of how I turn operational and business data
+                    into structured visual stories.
                 </p>
             </div>
 
             <div
-            id="tableauProjectCarousel"
-            class="carousel slide"
-            data-bs-ride="false"
+                id="tableauProjectCarousel"
+                class="carousel slide"
+                data-bs-ride="false"
             >
 
-                <!-- Carousel slides -->
                 <div class="carousel-inner">
 
                     <!-- Project 1 -->
@@ -388,47 +431,62 @@
                         <div class="project-slide">
                             <div class="row align-items-stretch g-0">
 
-                                <!-- Image -->
                                 <div class="col-lg-6 project-image-column">
                                     <div class="project-image-frame">
                                         <img
                                             src="./asset/1.png"
                                             class="project-carousel-image"
                                             alt="Automotive service analysis Tableau dashboard"
+                                            loading="lazy"
                                         >
                                     </div>
                                 </div>
 
-                                <!-- Information -->
                                 <div class="col-lg-6">
                                     <div class="project-carousel-content">
 
                                         <p class="project-category">
-                                        Business Intelligence
+                                            Business Intelligence
                                         </p>
 
                                         <h3 class="fw-bold">
-                                        Automotive Service Analysis
+                                            Automotive Service Analysis
                                         </h3>
 
-                                        <p class="text-secondary">
-                                        An interactive Tableau dashboard analyzing
-                                        service revenue, service duration, vehicle
-                                        models, customer complaints, and payment
-                                        behavior.
-                                        </p>
+                                        <div class="project-details">
+                                            <p>
+                                                <strong>Challenge:</strong>
+                                                Service data covered revenue, repair time,
+                                                vehicle models, billing types, mileage, and
+                                                customer complaints, making relationships
+                                                between performance factors difficult to interpret.
+                                            </p>
 
-                                        <p class="project-tools">
-                                        Tableau · Data Analysis · Business Insights
-                                        </p>
+                                            <p>
+                                                <strong>Approach:</strong>
+                                                I analyzed the service records and created an
+                                                interactive Tableau dashboard to compare the key
+                                                variables. I also used statistical and
+                                                machine-learning methods to identify the factors
+                                                most strongly associated with service outcomes.
+                                            </p>
+
+                                            <p>
+                                                <strong>Outcome:</strong>
+                                                The project translated operational data into a
+                                                visual summary of the factors influencing revenue
+                                                and service performance, making high-performing
+                                                segments and operational concerns easier to identify.
+                                            </p>
+                                        </div>
 
                                         <a
-                                        href="https://public.tableau.com/views/RevenueAnalysis_17764382396560/RevenueAnalysis?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link"
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        class="btn btn-dark tableau-button"
+                                            href="https://public.tableau.com/views/RevenueAnalysis_17764382396560/RevenueAnalysis?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link"
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            class="btn btn-dark tableau-button"
                                         >
-                                        View on Tableau
+                                            View on Tableau
                                         </a>
 
                                     </div>
@@ -443,47 +501,63 @@
                         <div class="project-slide">
                             <div class="row align-items-stretch g-0">
 
-                                <!-- Image -->
                                 <div class="col-lg-6 project-image-column">
                                     <div class="project-image-frame">
                                         <img
                                             src="./asset/2.png"
                                             class="project-carousel-image"
-                                            alt="Automotive service analysis Tableau dashboard"
+                                            alt="Customer service analysis Tableau story"
+                                            loading="lazy"
                                         >
                                     </div>
                                 </div>
 
-                                <!-- Information -->
                                 <div class="col-lg-6">
                                     <div class="project-carousel-content">
 
                                         <p class="project-category">
-                                        Data Visualization
+                                            Data Visualization
                                         </p>
 
                                         <h3 class="fw-bold">
-                                        Customer Service Analysis
+                                            Customer Service Analysis
                                         </h3>
 
-                                        <p class="text-secondary">
-                                        An interactive analysis of the customer
-                                        journey, highlighting customer behavior,
-                                        service experiences, and key opportunities
-                                        for improving business performance.
-                                        </p>
+                                        <div class="project-details">
+                                            <p>
+                                                <strong>Challenge:</strong>
+                                                Customer interactions occurred across multiple
+                                                stages of the dealership journey, making it
+                                                difficult to see where experiences were positive
+                                                and where customers encountered friction.
+                                            </p>
 
-                                        <p class="project-tools">
-                                        Tableau · Visualization · Customer Insights
-                                        </p>
+                                            <p>
+                                                <strong>Approach:</strong>
+                                                I organized customer-service data into a visual
+                                                journey and developed a Tableau story connecting
+                                                customer behavior, service interactions, and
+                                                experience indicators. The sequence guides the
+                                                audience through the journey rather than presenting
+                                                disconnected charts.
+                                            </p>
+
+                                            <p>
+                                                <strong>Outcome:</strong>
+                                                The project created a clearer view of the customer
+                                                experience and highlighted stages where service
+                                                quality, communication, or process improvements
+                                                could have the greatest effect.
+                                            </p>
+                                        </div>
 
                                         <a
-                                        href="https://public.tableau.com/views/DealershipCustomerJourneyStory/FinalStory?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link"
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        class="btn btn-dark tableau-button"
+                                            href="https://public.tableau.com/views/DealershipCustomerJourneyStory/FinalStory?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link"
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            class="btn btn-dark tableau-button"
                                         >
-                                        View on Tableau
+                                            View on Tableau
                                         </a>
 
                                     </div>
@@ -498,47 +572,60 @@
                         <div class="project-slide">
                             <div class="row align-items-stretch g-0">
 
-                                <!-- Image -->
                                 <div class="col-lg-6 project-image-column">
                                     <div class="project-image-frame">
                                         <img
                                             src="./asset/3.png"
                                             class="project-carousel-image"
-                                            alt="Automotive service analysis Tableau dashboard"
+                                            alt="Profit margin analysis Tableau story"
+                                            loading="lazy"
                                         >
                                     </div>
                                 </div>
 
-                                <!-- Information -->
                                 <div class="col-lg-6">
                                     <div class="project-carousel-content">
 
                                         <p class="project-category">
-                                        Data Storytelling
+                                            Data Storytelling
                                         </p>
 
                                         <h3 class="fw-bold">
-                                        Profit Margin Analysis
+                                            Profit Margin Analysis
                                         </h3>
 
-                                        <p class="text-secondary">
-                                        A visual analysis of profitability patterns,
-                                        business performance, and the factors affecting
-                                        profit margins, presented as a clear and
-                                        actionable data story.
-                                        </p>
+                                        <div class="project-details">
+                                            <p>
+                                                <strong>Challenge:</strong>
+                                                Overall revenue figures could hide meaningful
+                                                differences in profitability across products,
+                                                categories, regions, and business segments.
+                                            </p>
 
-                                        <p class="project-tools">
-                                        Tableau · Storytelling · Business Analysis
-                                        </p>
+                                            <p>
+                                                <strong>Approach:</strong>
+                                                I developed a Tableau story to examine profit
+                                                margins across key business dimensions and compare
+                                                areas of strong performance with areas where
+                                                revenue did not translate into proportionate profit.
+                                            </p>
+
+                                            <p>
+                                                <strong>Outcome:</strong>
+                                                The analysis transformed profitability data into a
+                                                focused visual narrative, showing which segments
+                                                contributed most to margin performance and where
+                                                further investigation or cost control may be needed.
+                                            </p>
+                                        </div>
 
                                         <a
-                                        href="https://public.tableau.com/views/ProfitMarginAnalysisStory/Story1?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link"
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        class="btn btn-dark tableau-button"
+                                            href="https://public.tableau.com/views/ProfitMarginAnalysisStory/Story1?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link"
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            class="btn btn-dark tableau-button"
                                         >
-                                        View on Tableau
+                                            View on Tableau
                                         </a>
 
                                     </div>
@@ -550,58 +637,134 @@
 
                 </div>
 
-                <!-- Previous button -->
                 <button
-                class="carousel-control-prev"
-                type="button"
-                data-bs-target="#tableauProjectCarousel"
-                data-bs-slide="prev"
-                aria-label="Previous project"
+                    class="carousel-control-prev"
+                    type="button"
+                    data-bs-target="#tableauProjectCarousel"
+                    data-bs-slide="prev"
+                    aria-label="Previous project"
                 >
                     <span
-                    class="carousel-control-prev-icon"
-                    aria-hidden="true"
+                        class="carousel-control-prev-icon"
+                        aria-hidden="true"
                     ></span>
                 </button>
 
-                <!-- Next button -->
                 <button
-                class="carousel-control-next"
-                type="button"
-                data-bs-target="#tableauProjectCarousel"
-                data-bs-slide="next"
-                aria-label="Next project"
+                    class="carousel-control-next"
+                    type="button"
+                    data-bs-target="#tableauProjectCarousel"
+                    data-bs-slide="next"
+                    aria-label="Next project"
                 >
                     <span
-                    class="carousel-control-next-icon"
-                    aria-hidden="true"
+                        class="carousel-control-next-icon"
+                        aria-hidden="true"
                     ></span>
                 </button>
 
-                <!-- Indicator dots -->
                 <div class="carousel-indicators">
                     <button
-                    type="button"
-                    data-bs-target="#tableauProjectCarousel"
-                    data-bs-slide-to="0"
-                    class="active"
-                    aria-current="true"
-                    aria-label="Project 1"
+                        type="button"
+                        data-bs-target="#tableauProjectCarousel"
+                        data-bs-slide-to="0"
+                        class="active"
+                        aria-current="true"
+                        aria-label="Project 1"
                     ></button>
 
                     <button
-                    type="button"
-                    data-bs-target="#tableauProjectCarousel"
-                    data-bs-slide-to="1"
-                    aria-label="Project 2"
+                        type="button"
+                        data-bs-target="#tableauProjectCarousel"
+                        data-bs-slide-to="1"
+                        aria-label="Project 2"
                     ></button>
 
                     <button
-                    type="button"
-                    data-bs-target="#tableauProjectCarousel"
-                    data-bs-slide-to="2"
-                    aria-label="Project 3"
+                        type="button"
+                        data-bs-target="#tableauProjectCarousel"
+                        data-bs-slide-to="2"
+                        aria-label="Project 3"
                     ></button>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="about-section py-5">
+        <div class="container">
+            <div class="row align-items-center g-5">
+
+                <div class="col-lg-5">
+
+                    <p class="section-label">
+                        About Me
+                    </p>
+
+                    <h2 class="section-heading">
+                        Presenting data through story
+                    </h2>
+
+                    <p class="about-description">
+                        I’m Arya, a Statistics and Data Science student at
+                        UNC–Chapel Hill with experience in data analysis,
+                        visualization, and statistical research.
+                    </p>
+
+                    <p class="about-description">
+                        I enjoy turning complex findings into clear,
+                        audience-focused stories that help consulting teams,
+                        marketers, and decision-makers communicate their work
+                        more effectively.
+                    </p>
+
+                    <a
+                        href="./asset/Arya-Gavande-Resume-0726.pdf"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="btn resume-button mt-3"
+                    >
+                        View Full Resume
+                    </a>
+
+                </div>
+
+                <div class="col-lg-7">
+                    <div class="resume-card">
+
+                        <div class="resume-card-header">
+
+                            <div>
+                                <p class="resume-card-label">
+                                    Resume
+                                </p>
+
+                                <h3>
+                                    Experience and qualifications
+                                </h3>
+                            </div>
+
+                            <a
+                                href="./asset/Arya-Gavande-Resume-0726.pdf"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="resume-open-link"
+                            >
+                                Open PDF ↗
+                            </a>
+
+                        </div>
+
+                        <iframe
+                            src="./asset/Arya-Gavande-Resume-0726.pdf?v=5#toolbar=0&navpanes=0"
+                            class="resume-preview"
+                            title="Preview of Arya Gavande's resume"
+                            loading="lazy"
+                        ></iframe>
+
+                    </div>
                 </div>
 
             </div>
@@ -611,62 +774,59 @@
     <!-- Contact -->
     <section id="contact" class="contact-section py-5">
         <div class="container">
-
             <div class="contact-wrapper">
 
                 <p class="section-label">
-                Contact
+                    Contact
                 </p>
 
-                <h2 class="display-5 fw-bold">
-                Let’s work together
+                <h2 class="section-heading">
+                    Let’s work together
                 </h2>
 
                 <p class="contact-description">
-                Available for freelance data storytelling, dashboard,
-                visualization, report, and client-presentation projects.
+                    Available for freelance data storytelling, dashboard,
+                    visualization, report, and client-presentation projects.
                 </p>
 
                 <div class="contact-links">
 
-                    <!-- Email -->
                     <a
-                    href="mailto:aryagavande@gmail.com"
-                    class="contact-button"
+                        href="mailto:aryagavande@gmail.com"
+                        class="contact-button"
                     >
                         <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="21"
-                        height="21"
-                        fill="currentColor"
-                        viewBox="0 0 16 16"
-                        aria-hidden="true"
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="21"
+                            height="21"
+                            fill="currentColor"
+                            viewBox="0 0 16 16"
+                            aria-hidden="true"
                         >
                             <path
-                            d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1zm13 2.383-4.708 2.825L15 11.105zm-.034 6.876-5.64-3.471L8 9.583 6.674 8.788l-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741M1 11.105l4.708-2.897L1 5.383z"
+                                d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1zm13 2.383-4.708 2.825L15 11.105zm-.034 6.876-5.64-3.471L8 9.583 6.674 8.788l-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741M1 11.105l4.708-2.897L1 5.383z"
                             />
                         </svg>
 
                         <span>Email Me</span>
                     </a>
 
-                    <!-- LinkedIn -->
                     <a
-                    href="https://www.linkedin.com/in/arya-gavande/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="contact-button"
+                        href="https://www.linkedin.com/in/arya-gavande/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="contact-button"
                     >
                         <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="21"
-                        height="21"
-                        fill="currentColor"
-                        viewBox="0 0 16 16"
-                        aria-hidden="true"
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="21"
+                            height="21"
+                            fill="currentColor"
+                            viewBox="0 0 16 16"
+                            aria-hidden="true"
                         >
                             <path
-                            d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708C16 15.487 15.474 16 14.825 16H1.175C.526 16 0 15.487 0 14.854zm4.943 12.248V6.169H2.542v7.225zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248S2.4 3.225 2.4 3.934c0 .694.521 1.248 1.327 1.248zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.765-3.252-1.274 0-1.845.7-2.165 1.193V6.169h-2.4c.03.678 0 7.225 0 7.225z"
+                                d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708C16 15.487 15.474 16 14.825 16H1.175C.526 16 0 15.487 0 14.854zm4.943 12.248V6.169H2.542v7.225zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248S2.4 3.225 2.4 3.934c0 .694.521 1.248 1.327 1.248zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.765-3.252-1.274 0-1.845.7-2.165 1.193V6.169h-2.4c.03.678 0 7.225 0 7.225z"
                             />
                         </svg>
 
@@ -674,7 +834,6 @@
                     </a>
 
                 </div>
-
             </div>
         </div>
     </section>
